@@ -8,6 +8,7 @@ namespace FindSubstring
         private readonly string _str;
 
         public Finder(string str) => _str = str ?? throw new ArgumentNullException(str);
+        
         public string Do()
                 {
                     int maxLenght = 0; // Максимальная длинна последовательности уникальных символов (далее просто "последовательность")
@@ -28,7 +29,7 @@ namespace FindSubstring
                                     maxLenght = currentLenght;
                                     startIndex = startIndexLocalSubstring;
                                 }
-                                startIndexLocalSubstring = previousIndex + 1; // Начало новой подстрокиConsole.Write($"\n\t\t\tИндекс начала актуальной подстроки: {startIndexLocalSubstring}. Остаток (lenght:{_str.Substring(startIndexLocalSubstring).Length}): {_str.Substring(startIndexLocalSubstring)}");
+                                startIndexLocalSubstring = previousIndex + 1; // Начало новой подстроки
                             }
                             
                             dict[_str[i]] = i; // Обновляем индекс символа в хеш-таблице
